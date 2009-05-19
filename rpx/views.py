@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
-from rpx.mapings import MappingApi
 
 def permute_name(name_string, num):
     num_str=str(num)
@@ -23,19 +22,6 @@ def rpx_response(request):
     else:
         return HttpResponseForbidden()
 
-@login_required
-def rpx_map(request):
-    """
-    maps an identifier to an existing
-    """
-    # first get the token
-    token = request.GET.get('token', '')
-    if not token: return HttpResponseForbidden()
-       
-    api = MappingApi()
-    if api.request_map(request.user, token):
-        return HttpResponseRedirect('/')
-    return HttpResponseForbidden()
     
     
 @login_required

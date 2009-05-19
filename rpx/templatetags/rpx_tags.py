@@ -1,7 +1,7 @@
 from django import template
 from django.template import Context, loader
 from django.template.loader import render_to_string
-import settings
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
 """
