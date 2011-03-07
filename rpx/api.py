@@ -105,7 +105,7 @@ class RpxApi:
         - `user`: a django.contrib.auth.models.User instance
         - `identifier`: the identifier as string
         """
-                url = 'https://rpxnow.com/api/v2/unmap'
+        url = 'https://rpxnow.com/api/v2/unmap'
         args = {
           'format': 'json',
           'apiKey': settings.RPXNOW_API_KEY,
